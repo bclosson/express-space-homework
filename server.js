@@ -38,7 +38,7 @@ const space = require('./models/marsMissions');
 app.get('/marsMissions', (req, res) => {
   // console.log(space);
   // res.send(space);
-  res.render('mission/index', {
+  res.render('./missions/index', {
     space: space,
   });
 });
@@ -46,9 +46,15 @@ app.get('/marsMissions', (req, res) => {
 // SHOW Route
 // send data to 'missions/show.ejs' view
 // the view should display all the data for a single mission
+app.get('/marsMissions/:id', (req, res) => {
+  res.render('./missions/show', {
+    space: space[req.params.id]
+  });
+});
 
-
-
+app.get('/', (req, res) => {
+ res.send('<h1>Welcome To Mars Missions!</h1>');
+});
 
 // LISTENER
 app.listen(port, function() {

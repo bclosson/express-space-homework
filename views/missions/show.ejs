@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Show</title>
 </head>
 <body>
-    
+    <nav>
+        <a href="/">Home</a>
+        <a href="/marsMissions">Missions</a>
+    </nav>
+
+    <h1>Show Mission</h1>
+
+    <h4><strong>Mission:</strong><%= space.name %></h4>
+    <div><strong>Launch Date:</strong><%= space.launchDate %></div>
+    <div><strong>Operator:</strong><%= space.operator %></div>
+    <div><strong>Mission Type:</strong><%= space.missionType %></div>
+    <img src="<%= space.img %>" alt="Space Ship">
+
 </body>
 </html>
